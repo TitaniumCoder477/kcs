@@ -1,3 +1,9 @@
+<?php 
+	$email = $_POST['email'];
+	if(isset($email))
+		setcookie('kcs_user_email',$email);
+?>
+
 <!DOCTYPE html>
 <?php require("snippets/copyright_code.php"); ?>
 <html lang="en">
@@ -45,7 +51,7 @@
 			<div class='panel-heading'>
 				<h3 class='panel-title'>Result</h3>
 			</div>
-			<div class='panel-body'>				
+			<div class='panel-body'>
 			<?php
 			
 				/* CONNECT TO DATABASE */	
@@ -70,8 +76,6 @@
 						$sql = "UPDATE Users SET TIMEOUT=\"" . date_format($datetime, "Y-m-d H:i:s") . "\" WHERE EMAIL=\"$email\" AND PIN=\"$pin\" AND ADMIN=\"1\"";
 						$db_conn->query($sql);
 						
-						setcookie('kcs_user_email',$email);
-						
 						print("	Success!<br><br>
 								<span id=\"success-timer\">You will be redirected to the admin management page.</span>");									
 					}
@@ -82,7 +86,7 @@
 				/* CLOSE DATABASE CONNECTION */
 
 				$db_conn = null;
-			?>					
+			?>
 			</div>
 		</div>
 	</div>

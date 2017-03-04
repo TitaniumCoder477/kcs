@@ -1,7 +1,7 @@
 <?php
 	/* AUTHENTICATE */
 	try {
-		$email = $_COOKIE['kcs_user_email'];		
+		$email = $_COOKIE['kcs_user_email'];
 		$sql = "SELECT * FROM Users WHERE EMAIL='$email' AND TIMEOUT > NOW()";
 		$sth = $db_conn->prepare($sql);
 		$sth->execute();

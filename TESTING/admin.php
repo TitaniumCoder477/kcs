@@ -40,9 +40,10 @@
 	</div>
 	<div class='panel-body'>
 	<?php
+		
 		/* CONNECT TO DATABASE */	
 		require("snippets/database.php");
-		
+				
 		/* AUTHENTICATE */
 		require("snippets/admin-auth-test.php");
 		
