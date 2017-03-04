@@ -1,0 +1,10 @@
+/** DISABLED because the plan is to use a 10.1" tablet which will have scrolling built in
+@media (min-width: 768px) {
+	::-webkit-scrollbar:vertical {
+		width: 120px;
+	}
+	::-webkit-scrollbar:horizontal {
+		height: 102px;
+	}
+}
+*/

@@ -1,0 +1,17 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="1">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="576" startPos="990" endPos="990" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Windows\System32\drivers\etc\hosts" backupFilePath="" originalFileLastModifTimestamp="1474142547" />
+            <File firstVisibleLine="45" xOffset="0" scrollWidth="1312" startPos="1706" endPos="1706" selMode="0" lang="PHP" encoding="-1" filename="K:\html\kcssites\MASTER\admin-authUser.php" backupFilePath="" originalFileLastModifTimestamp="1473812447" />
+            <File firstVisibleLine="82" xOffset="0" scrollWidth="1216" startPos="3817" endPos="3822" selMode="0" lang="PHP" encoding="-1" filename="K:\html\kcssites\MASTER\admin-tags-createassociation-process.php" backupFilePath="" originalFileLastModifTimestamp="1473812447" />
+            <File firstVisibleLine="57" xOffset="0" scrollWidth="1128" startPos="2140" endPos="2195" selMode="0" lang="PHP" encoding="-1" filename="K:\html\kcssites\MASTER\items-viewcheckedout.php" backupFilePath="" originalFileLastModifTimestamp="1474146647" />
+            <File firstVisibleLine="244" xOffset="0" scrollWidth="2040" startPos="9813" endPos="9818" selMode="0" lang="PHP" encoding="-1" filename="K:\html\kcssites\MASTER\admin-items-viewcheckedout-process.php" backupFilePath="" originalFileLastModifTimestamp="1473812447" />
+            <File firstVisibleLine="112" xOffset="0" scrollWidth="2016" startPos="4516" endPos="4521" selMode="0" lang="PHP" encoding="-1" filename="K:\html\kcssites\MASTER\admin-categories-updatedelete-process.php" backupFilePath="" originalFileLastModifTimestamp="1473812447" />
+            <File firstVisibleLine="82" xOffset="0" scrollWidth="2048" startPos="3463" endPos="3468" selMode="0" lang="PHP" encoding="-1" filename="K:\html\kcssites\MASTER\admin-items-viewcheckedout.php" backupFilePath="" originalFileLastModifTimestamp="1474146655" />
+            <File firstVisibleLine="55" xOffset="0" scrollWidth="2024" startPos="2334" endPos="2334" selMode="0" lang="PHP" encoding="-1" filename="K:\html\kcssites\MASTER\admin-items-create-process.php" backupFilePath="" originalFileLastModifTimestamp="1474146814" />
+            <File firstVisibleLine="55" xOffset="0" scrollWidth="2152" startPos="2560" endPos="2560" selMode="0" lang="PHP" encoding="-1" filename="K:\html\kcssites\MASTER\admin-items-updatedelete-process.php" backupFilePath="" originalFileLastModifTimestamp="1474152560" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1136" startPos="343" endPos="343" selMode="0" lang="PHP" encoding="-1" filename="K:\html\kcssites\MASTER\about.php" backupFilePath="" originalFileLastModifTimestamp="1474153278" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

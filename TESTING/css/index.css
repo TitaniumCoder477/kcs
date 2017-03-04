@@ -1,0 +1,221 @@
+/*********************/
+/** Standard Values **/
+/*********************/
+
+body {
+	/** background-color: #76421B; **/
+	border: 20px 20px 20px 20px;
+	padding: 10px 10px 10px 10px;
+}
+
+h1 {
+	color: #76563F;
+	text-align: center;
+}
+
+p {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+p#footer {
+	font-family: "Arial";
+	font-size: 12px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	text-align: center;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+/** COMMENTED OUT BECAUSE DEFAULT IS ACCEPTED AND EXCEPTION IS FAT SCROLL BARS
+::-webkit-scrollbar:vertical {
+    width: 20px;
+}
+::-webkit-scrollbar:horizontal {
+    height: 102px;
+}*/
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.wrap {
+	overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis; 
+	word-break: break-all; 
+	word-wrap: break-word; 
+}
+
+/*********************/
+/** Sections        **/
+/*********************/
+
+	div.sections {
+		/*box model*/
+		width: auto;
+		padding: 20px 20px 20px 20px;
+		border: 2px solid;		
+		margin: 10px 10px 10px 10px;
+		
+		border-radius: 25px;
+		background-color: #F68838;		
+	}
+	
+	/** Top **/
+	
+		div.sections#top_section {			
+			height: 100px;
+		}
+	
+	/** Middle **/
+	
+		div.sections#middle_section {
+			min-height: 400px;
+		}
+		
+		div.sections#middle_section>.buttons_wrapper {
+			
+			min-height: 300px;
+			margin: 0 auto;
+			/** display: table; */
+			
+		}
+		
+		div.sections#middle_section>.table_wrapper {
+			width: 615px;
+			height: 300px;
+			margin: 0 auto;
+		}
+	
+	/** Bottom **/
+
+		div.sections#bottom_section {
+			height: auto;
+			overflow-y:hidden;
+		}
+	
+/*********************/
+/** Buttons         **/
+/*********************/
+
+	div.button_defaults {
+		/*box model*/
+		width: 180px; /** 200px incl padding and margin */
+		
+		padding: 5px 5px 5px 5px;
+		border: 2px solid;
+		margin: 5px 5px 5px 5px;		
+		
+		border-radius: 25px;
+		color: #76421B;
+		background-color: #F7B483;
+		
+		float: right;
+	}
+	
+	div.button_defaults:hover {
+		color: #76563F;
+		text-align: center;
+		background-color: #FAD58A;
+	}
+	
+	div>h3.button {
+		color: #76563F;
+		text-align: center;
+	}
+	
+	div>h3.button + p {
+		color: #76563F;
+		text-align: center;		
+	}	
+	
+	div.button_defaults.left {
+		float:  left;
+	}
+	
+	div.button_defaults.right {
+		float:  right;
+	}
+	
+/********************/
+/** Tables         **/
+/********************/
+
+	table.table_defaults {
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		width: 100%;
+		border-collapse: collapse;
+		color: #76421B;
+	}
+	
+	table.table_defaults td, table.table_defaults th {
+		font-size: 1em;
+		border: 2px solid #76421B;
+		padding: 3px 7px 2px 7px;
+		background-color: #F7B483;
+	}
+	
+	table.table_defaults th {
+		font-size: 1.1em;
+		text-align: left;
+		padding-top: 5px;
+		padding-bottom: 4px;
+		background-color: #76421B;
+		color: #FAD58A;
+	}
+	
+	table.table_defaults tr.alt td {
+		color: #000000;
+		background-color: #FAD58A;
+	}
+	
+	table.table_defaults#default {
+	}
+	
+	
+/********************/
+/** Images         **/
+/********************/
+
+img.button_chkinot {
+	/*margin-top: 20px;*/
+	/*margin-left: 10px;*/
+	display: inline;
+	/*float: right;*/
+	width:100%;
+	
+}
+
+img.button_chkinot.header {
+	margin: 0px;
+	height: 20px;
+	width: 30px;
+	float: right;
+}
+
+img.back-button {
+	margin: 10px;
+	float: left;
+	width: 30px;
+}
+
+img.home-button {
+	margin: 5px;
+	float: left;
+	width: 40px;
+}
+
+img.checkoutlist-button {
+	margin: 5px;
+	float: left;
+	width: 40px;
+}
