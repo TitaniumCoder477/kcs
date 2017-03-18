@@ -62,21 +62,24 @@ CONFIGURATION
 	1. What: The main web app folder
 	2. Where: Must go into /var/www/html/kcs (a kcs sub-folder of your web files location)
 	3. Set ownership and permissions (www-data:www-data by default or [your username]:www-data if you plan to edit files)
-		   
+		
+		From the local git folder:
+		
 		sudo mkdir /var/www/html/kcs
-		sudo cp -R TESTING /var/www/html/kcs
-		sudo chown www-data:www-data -R /var/www/html/kcs/TESTING
+		sudo cp -R kcs/TESTING /var/www/html/kcs
 		sudo chmod a-rwx,u+rwX,g+rX -R /var/www/html/kcs/TESTING
-		sudo chmod g+s /var/www/html/kcs/TESTING
-		sudo chmod g-r /var/www/html/TESTING/snippets/database.php
+		sudo chmod g+s /var/www/html/kcs/TESTING		
+		sudo chown www-data:www-data -R /var/www/html/kcs/TESTING
 	
 	TESTING.conf
 	1. What: The apache2 virtual site config file
 	2. Where: Put this in the /etc/apache2/sites-available/ folder and set ownership and permissions
 			
-		sudo cp TESTING.conf /etc/apache2/sites-available
-		sudo chown www-data:www-data /etc/apache2/sites-available/TESTING.conf
-		sudo chmod 640 /etc/apache2/sites-available/TESTING.conf
+		From the local folder where git downloaded kcs:
+		
+		sudo cp kcs/TESTING.conf /etc/apache2/sites-available
+		sudo chmod 644 /etc/apache2/sites-available/TESTING.conf
+		sudo chown root:root /etc/apache2/sites-available/TESTING.conf
 	   
 	3. (optional) Edit this file and change the ServerName to whatever you want
 	
@@ -96,8 +99,10 @@ CONFIGURATION
 	1. What: A handful of MySQL DB templates to import
 	2. Where: Import one of them into MySQL  (if you changed the root password under SETUP SERVER above, then use that)
 	
+		From the local folder where git downloaded kcs:
+		
 		sudo mysql -s -N -uroot -p0:OuzKVA -e "CREATE DATABASE TESTING"
-		sudo mysql -s -N -uroot -p0:OuzKVA TESTING < TESTING_NODATA.sql
+		sudo mysql -s -N -uroot -p0:OuzKVA TESTING < TESTING_DBs/TESTING_NODATA.sql
 		sudo service mysql restart
 		
 TESTING
