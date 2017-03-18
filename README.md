@@ -12,3 +12,109 @@ All this said, feel free to download KCS and deploy it on your own LAMP or WAMP 
 Thanks!
 
 TitaniumCoder477
+
+
+
+QUICKSTART
+
+PREP: Determine variables
+
+	Please think about and decide on the following:
+	
+		Name of KCS server? 			Default: TESTING.kcs
+		Name of KCS web app?			Default: TESTING.kcs
+		*MySQL root username?			Default: root
+		*MySQL root password?			Default: 0:OuzKVA		(3rd character is a letter)
+		
+		*If you are going to change these, you must also update the ../TESTING/snippets/database.php file!
+
+SETUP SERVER: LAMP server
+
+	Do you have a LAMP server all ready to go? If not, one way you can spin up a LAMP server is by 
+	installing directly from Ubuntu Server OS ISO. Just choose "LAMP server" from Software selection 
+	during installation. (You might also want to select "OpenSSH server" if this server will be headless 
+	or you want to get to it from your dev laptop or workstation via your local network)
+	
+	During the Ubuntu Server installation and if you have selected "LAMP server," you will be prompted 
+	for a MySQL root password. Make sure to use the MySQL root username/password chosen above.
+
+	If you already have a server but not necessarily LAMP, you can use the 001-setupLAMP.sh script
+	located in the installation/ folder of this repository.
+
+	** Should also work on a WAMP server, but you're on your own for now; I have no experience with
+	a WAMP server yet. **
+
+DOWNLOAD: https://github.com/TitaniumCoder477/kcs
+
+	You can clone the repository or download a ZIP and extract.
+	
+	To clone from Bash: git clone https://github.com/TitaniumCoder477/kcs.git
+	
+CONFIGURATION
+
+	This is a breakdown of the folders and files and what to do with them.
+
+	installation/
+	1. What: A handful of scripts and such
+	2. (optional) Where: You can put this folder anywhere
+
+	TESTING/
+	1. What: The main web app folder
+	2. Where: Must go into /var/www/html/kcs (a kcs sub-folder of your web files location)
+	3. Set ownership and permissions (www-data:www-data by default or [your username]:www-data if you plan to edit files)
+		   
+		sudo mkdir /var/www/html/kcs
+		sudo cp -R TESTING /var/www/html/kcs
+		sudo chown www-data:www-data -R /var/www/html/kcs/TESTING
+		sudo chmod a-rwx,u+rwX,g+rX -R /var/www/html/kcs/TESTING
+		sudo chmod g+s /var/www/html/kcs/TESTING
+		sudo chmod g-r /var/www/html/TESTING/snippets/database.php
+	
+	TESTING.conf
+	1. What: The apache2 virtual site config file
+	2. Where: Put this in the /etc/apache2/sites-available/ folder and set ownership and permissions
+			
+		sudo cp TESTING.conf /etc/apache2/sites-available
+		sudo chown www-data:www-data /etc/apache2/sites-available/TESTING.conf
+		sudo chmod 640 /etc/apache2/sites-available/TESTING.conf
+	   
+	3. (optional) Edit this file and change the ServerName to whatever you want
+	
+		Default as per above: TESTING.kcs
+		
+		If you have chosen to name your actual LAMP server something else, you might want to do the same here to
+		keep things consistent. I.e. your LAMP server and Apache2 virtual site CAN be the same but do not have to be.
+	  	
+		WARNING: Please do not make your KCS server Internet facing. Keep it firewalled within your local network.		
+	  
+	4. Enable the virtual site and reload Apache2
+	
+		sudo a2ensite TESTING.kcs
+		sudo service apache2 reload
+	
+	TESTING_DBs/
+	1. What: A handful of MySQL DB templates to import
+	2. Where: Import one of them into MySQL  (if you changed the root password under SETUP SERVER above, then use that)
+	
+		sudo mysql -s -N -uroot -p0:OuzKVA -e "CREATE DATABASE TESTING"
+		sudo mysql -s -N -uroot -p0:OuzKVA TESTING < TESTING_NODATA.sql
+		sudo service mysql restart
+		
+TESTING
+
+	Now KCS should be setup. However, you may need to configure DNS to get to it. If you are running it on a Windows 
+	domain, determine the IP address assigned to KCS (or better yet, give it a static or at least a reservation). Then 
+	create a DNS entry for TESTING.kcs (or whatever you chose in CONFIGURATION > TESTING.conf > 3 above) to that IP address.
+	
+	Then refresh your local DNS:
+	
+		Ex. On a Windows OS open an Administrative command prompt and type: 
+		
+			ipconfig /flushdns && ipconfig /registerdns
+	
+	See if you can resolve and ping TESTING.kcs:
+	
+		ping TESTING.kcs
+		
+	If successful, you can open a browser and go to http://TESTING.kcs
+		
