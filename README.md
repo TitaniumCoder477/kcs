@@ -53,6 +53,13 @@ DOWNLOAD: https://github.com/TitaniumCoder477/kcs
 CONFIGURATION
 
 	This is a breakdown of the folders and files and what to do with them.
+	
+	If you want to skip the custom configuration, just do the following:
+	
+		chmod u+x kcs/deploy.sh
+		./kcs/deploy.sh
+		
+	Or, follow the steps below (which are all included in the script above).
 
 	installation/
 	1. What: A handful of scripts and such
@@ -102,7 +109,7 @@ CONFIGURATION
 		From the local folder where git downloaded kcs:
 		
 		sudo mysql -s -N -uroot -p0:OuzKVA -e "CREATE DATABASE TESTING"
-		sudo mysql -s -N -uroot -p0:OuzKVA TESTING < TESTING_DBs/TESTING_NODATA.sql
+		sudo mysql -s -N -uroot -p0:OuzKVA TESTING < kcs/TESTING_DBs/TESTING_NODATA.sql
 		sudo service mysql restart
 		
 TESTING
