@@ -82,7 +82,7 @@ CONFIGURATION
 	1. What: The apache2 virtual site config file
 	2. Where: Put this in the /etc/apache2/sites-available/ folder and set ownership and permissions
 			
-		From the local folder where git downloaded kcs:
+		From the local git folder:
 		
 		sudo cp kcs/TESTING.conf /etc/apache2/sites-available
 		sudo chmod 644 /etc/apache2/sites-available/TESTING.conf
@@ -106,7 +106,7 @@ CONFIGURATION
 	1. What: A handful of MySQL DB templates to import
 	2. Where: Import one of them into MySQL  (if you changed the root password under SETUP SERVER above, then use that)
 	
-		From the local folder where git downloaded kcs:
+		From the local git folder:
 		
 		sudo mysql -s -N -uroot -p0:OuzKVA -e "CREATE DATABASE TESTING"
 		sudo mysql -s -N -uroot -p0:OuzKVA TESTING < kcs/TESTING_DBs/TESTING_NODATA.sql
