@@ -14,14 +14,15 @@ sudo cp kcs/TESTING.kcs.conf /etc/apache2/sites-available
 echo "`date -u` | APACHE2 VIRTUAL SITE | Setting permissions and ownership... "
 sudo chmod 644 /etc/apache2/sites-available/TESTING.kcs.conf
 sudo chown root:root /etc/apache2/sites-available/TESTING.kcs.conf
-echo "`date -u` | APACHE2 VIRTUAL SITE | Enabling site and reloading Apache2... "
+echo "`date -u` | APACHE2 VIRTUAL SITE | Enabling site... "
 sudo a2ensite TESTING.kcs
+echo "`date -u` | APACHE2 VIRTUAL SITE | Reloading Apache2... "
 sudo service apache2 reload
 echo "`date -u` | APACHE2 VIRTUAL SITE | DONE "
 echo "`date -u` | DATABASE | Creating database... "
 sudo mysql -s -N -uroot -p0:OuzKVA -e "CREATE DATABASE TESTING"
 echo "`date -u` | DATABASE | Importing structure... "
-sudo mysql -s -N -uroot -p0:OuzKVA TESTING < TESTING_DBs/TESTING_NODATA.sql
+sudo mysql -s -N -uroot -p0:OuzKVA TESTING < kcs/TESTING_DBs/TESTING_NODATA.sql
 echo "`date -u` | DATABASE | Restarting MySQL... "
 sudo service mysql restart
 echo "`date -u` | DATABASE | DONE "
